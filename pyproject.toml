@@ -50,6 +50,7 @@ before-all = ["bash ./scripts/build_libbinaryen.sh"]
 
 [tool.cibuildwheel.windows]
 archs = ["AMD64"]
+before-build = "pip install setuptools"
 
 [tool.cibuildwheel.linux]
 archs = ["x86_64"]
