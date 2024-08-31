@@ -40,7 +40,8 @@ dev = ["black", "isort", "cibuildwheel"]
 packages = ["binaryen", "binaryen.type"]
 
 [tool.cibuildwheel]
-build = ["cp38-*", "cp39-*", "cp310-*", "cp311-*", "cp312-*"]
+# build = ["cp38-*", "cp39-*", "cp310-*", "cp311-*", "cp312-*"]
+build = [ "cp312-*"]
 skip = "pp*"
 # WARNING: If you update this also update it in the Github Action!!
 environment = { BINARYEN_VERSION = "118" }
