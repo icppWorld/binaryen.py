@@ -1,6 +1,11 @@
 #!/bin/bash
 root_path="./binaryen/libbinaryen"
 
+if [[ -z "${BINARYEN_VERSION}" ]]; then
+    echo "\$BINARYEN_VERSION not set"
+    exit 1
+fi
+
 if grep -Fxq $BINARYEN_VERSION $root_path/version; then
     # Existing version found
     echo "Found existing binaryen installation, skipping."
@@ -33,11 +38,6 @@ CYGWIN* | MINGW* | MINGW32* | MSYS*)
     exit 1
     ;;
 esac
-
-if [ -z ${BINARYEN_VERSION+x} ]; then
-    echo "\$BINARYVEN_VERSION not set"
-    exit 1
-fi
 
 lib_path="$root_path/$arch-$platform"
 mkdir -p $lib_path

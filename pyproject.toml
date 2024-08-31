@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "binaryen.py"
-version = "117.1.1"
+version = "118.0.0"
 description = "A Python wrapper for Binaryen"
 authors = [{ name = "Jonathan Hargreaves", email = "jhargreaves189@gmail.com" }]
 readme = "README.md"
@@ -25,7 +25,7 @@ classifiers = [
     "Topic :: Software Development :: Compilers",
 ]
 license = { file = "LICENSE" }
-requires-python = ">=3.12"
+requires-python = ">=3.8"
 dependencies = ['cffi >= 1.15.0']
 
 [project.urls]
@@ -40,10 +40,10 @@ dev = ["black", "isort", "cibuildwheel"]
 packages = ["binaryen", "binaryen.type"]
 
 [tool.cibuildwheel]
-build = "cp312-*"
+build = ["cp38-*", "cp39-*", "cp310-*", "cp311-*", "cp312-*"]
 skip = "pp*"
 # WARNING: If you update this also update it in the Github Action!!
-environment = { BINARYEN_VERSION = "117" }
+environment = { BINARYEN_VERSION = "118" }
 # WARNING: If you update this also update it in the Github Action!!
 before-all = ["bash ./scripts/build_libbinaryen.sh"]
 

@@ -2,7 +2,7 @@ name: Build
 
 env:
   # WARNING: If you update this also update it in the pyproject.toml
-  BINARYEN_VERSION: 117
+  BINARYEN_VERSION: 118
   # WARNING: If you update this also update it in the pyproject.toml
 
 on:
