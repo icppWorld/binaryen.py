@@ -50,8 +50,12 @@ environment = { BINARYEN_VERSION = "118" }
 # WARNING: If you update this also update it in the Github Action!!
 before-all = ["bash ./scripts/build_libbinaryen.sh"]
 
+
 [tool.cibuildwheel.windows]
 archs = ["AMD64"]
+# Avoid link error with early setuptools. 
+# Remove this once we can upgrade again to latest setuptools
+environment = { LDFLAGS="/NODEFAULTLIB:LIBCMT" }
 
 [tool.cibuildwheel.linux]
 archs = ["x86_64"]
