@@ -53,9 +53,11 @@ before-all = ["bash ./scripts/build_libbinaryen.sh"]
 
 [tool.cibuildwheel.windows]
 archs = ["AMD64"]
+
+[tool.cibuildwheel.windows.environment]
 # Avoid link error with early setuptools. 
 # Remove this once we can upgrade again to latest setuptools
-environment = { LDFLAGS="/NODEFAULTLIB:LIBCMT" }
+LDFLAGS="/NODEFAULTLIB:LIBCMT"
 
 [tool.cibuildwheel.linux]
 archs = ["x86_64"]
