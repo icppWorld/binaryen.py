@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "binaryen.py"
-version = "118.0.0"
+version = "121.0.0"
 description = "A Python wrapper for Binaryen"
 authors = [{ name = "Jonathan Hargreaves", email = "jhargreaves189@gmail.com" }]
 readme = "README.md"
@@ -44,7 +44,7 @@ packages = ["binaryen", "binaryen.type"]
 build = ["cp310-*"]
 skip = "pp*"
 # WARNING: If you update this also update it in the Github Action!!
-environment = { BINARYEN_VERSION = "118" }
+environment = { BINARYEN_VERSION = "121" }
 # WARNING: If you update this also update it in the Github Action!!
 before-all = ["bash ./scripts/build_libbinaryen.sh"]
 
